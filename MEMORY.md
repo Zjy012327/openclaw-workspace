@@ -19,7 +19,27 @@
       - **Gateway WebSocket 配对失败 (错误码 1008)**：现象为客户端升级权限被拒；**解决方法**：执行 `openclaw gateway restart` 可快速恢复。
       - **LLM 模型响应超时 (默认 60s)**：针对复杂任务可能导致 `LLM idle timeout`；**解决方法**：在 `.openclaw/openclaw.json` 的 `agents.defaults` 中将 `timeoutSeconds` 提升至 120s 或更高。
   - **每日日志 (`memory/YYYY-MM-DD.md`)**：记录每日操作细节和临时记录。
-- **上下文预加载**：根据用户输入关键词（如"博客"、"部署"）主动预读相关配置或检查状态，减少等待时间。
+
+### ⚙️ 系统信号与上下文管理策略 (System Signal & Context Management)
+
+#### 1. 连续消息合并 (Debounce Strategy)
+- **机制**：防抖延迟 (Debouncing)。
+- **参数**：`debounceMs: 3000` (3秒)。
+- **功能**：防止高频重复触发，短时间内多次输入将合并为一次完整信号。
+
+#### 2. 对话上下文清理 (TTL Cleanup)
+- **模式**：基于生存时间 (TTL) 的自动过期模式。
+- **参数**：`ttl: 25 minutes`。
+- **功能**：数据在活跃状态 25 分钟后自动失效，回收内存并优化 Token 使用。
+
+#### 3. 上下文压缩与保护 (Compaction & Safety)
+- **模式**：开启安全保护模式 (Safety Protection Mode)。
+- **参数**：
+  - `reserveTokensFloor: 24,000`：保留两万四千个基础令牌，确保存档与推理完整。
+  - `memoryFlush: true`：启用内存冲刷，自动清理冗余数据。
+  - `enabled: true`：实时监控内存占用并动态触发压缩机制。
+
+- **预期目标**：通过“防抖 $\rightarrow$ 过期 $\rightarrow$ 压缩”的闭环，确保长对话下的系统响应性能与稳定性。
 
 ## 交互与处理原则
 - **批量处理**：一次接收所有需求并尽量通过单条消息完成多个简单任务。
