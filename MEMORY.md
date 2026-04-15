@@ -33,9 +33,10 @@
 - **功能**：数据在活跃状态 25 分钟后自动失效，回收内存并优化 Token 使用。
 
 #### 3. 上下文压缩与保护 (Compaction & Safety)
-- **模式**：开启安全保护模式 (Safety Protection Mode)。
+- **模式**：开启安全保护模式 (Safety Protection Mode)。系统将优先保证当前任务的稳定性，当上下文接近边界时执行强制干预，而非盲目追加。
 - **参数**：
-  - `reserveTokensFloor: 24,000`：保留两万四千个基础令牌，确保存档与推理完整。
+  - `triggerThreshold: 80%`：当上下文占用达到总容量的 80% 时触发压缩逻辑。
+  - `reserveTokensFloor: 15,000`：保留一万五千个基础令牌，作为核心推理的保底缓冲区。
   - `memoryFlush: true`：启用内存冲刷，自动清理冗余数据。
   - `enabled: true`：实时监控内存占用并动态触发压缩机制。
 
