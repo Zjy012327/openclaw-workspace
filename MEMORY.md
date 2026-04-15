@@ -9,7 +9,7 @@
 - **长任务分段**：长时间任务必须拆分为小块执行（每块 ≤ 30秒），以避免超时并向用户展示进度。
 - **Git 自动化同步**：每次工作区内容更新后，必须立即执行 `git commit` 并 `push` 到远程仓库 `origin main`。
   - 工作区路径: `~/.openclaw/workspace`
-  - Git 配置: `user.name="龙虾名"`, `user.email="bot@openclaw.local"`
+  - Git 配置: `user.name="小开"`, `user.email="bot@openclaw.local"`
 - **目录结构**：所有脚本文件必须存放在工作区的 `scripts` 目录下，保持根目录整洁。
 
 ## 记忆与上下文管理
