@@ -1,0 +1,471 @@
+{
+  "agents": {
+    "defaults": {
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "model": {
+        "fallbacks": [],
+        "primary": "custom-custome7/google/gemma-4-26b-a4b"
+      },
+      "timeFormat": "24",
+      "timeoutSeconds": 120,
+      "userTimezone": "Asia/Shanghai"
+    },
+    "list": [
+      {
+        "agentDir": "~/.openclaw/agents/main/agent",
+        "default": true,
+        "id": "main",
+        "name": "Main Agent",
+        "workspace": "~/.openclaw/workspace"
+      },
+      {
+        "agentDir": "~/.openclaw/agents/guoshi-2/agent",
+        "id": "guoshi-2",
+        "name": "GuoShi",
+        "workspace": "~/.openclaw/workspace-guoshi-2"
+      },
+      {
+        "id": "zxianglong-3",
+        "name": "Zxianglong",
+        "workspace": "~/.openclaw/workspace-zxianglong-3",
+        "agentDir": "~/.openclaw/agents/zxianglong-3/agent"
+      }
+    ]
+  },
+  "browser": {
+    "defaultProfile": "openclaw",
+    "enabled": true
+  },
+  "channels": {
+    "feishu": {},
+    "openclaw-weixin": {
+      "accounts": {
+        "97c8051b7d40-im-bot": {
+          "enabled": true
+        }
+      },
+      "defaultAccount": "97c8051b7d40-im-bot",
+      "enabled": true
+    }
+  },
+  "commands": {
+    "restart": true
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "clawx-e379af04bc7a918b2a337a6d389f9427"
+    },
+    "controlUi": {
+      "allowedOrigins": [
+        "file://"
+      ]
+    },
+    "mode": "local",
+    "tailscale": {}
+  },
+  "meta": {
+    "lastTouchedAt": "2026-04-15T07:30:39.375Z",
+    "lastTouchedVersion": "2026.4.9"
+  },
+  "models": {
+    "providers": {
+      "custom-custome7": {
+        "api": "openai-responses",
+        "baseUrl": "http://192.168.2.50:1234/v1",
+        "models": [
+          {
+            "id": "google/gemma-4-26b-a4b",
+            "name": "google/gemma-4-26b-a4b"
+          }
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "allow": [
+      "wecom",
+      "openclaw-weixin",
+      "openclaw-lark",
+      "acpx",
+      "alibaba",
+      "amazon-bedrock",
+      "amazon-bedrock-mantle",
+      "anthropic",
+      "anthropic-vertex",
+      "arcee",
+      "browser",
+      "byteplus",
+      "chutes",
+      "cloudflare-ai-gateway",
+      "comfy",
+      "copilot-proxy",
+      "deepgram",
+      "deepseek",
+      "device-pair",
+      "fal",
+      "fireworks",
+      "github-copilot",
+      "google",
+      "groq",
+      "huggingface",
+      "kilocode",
+      "kimi",
+      "litellm",
+      "microsoft-foundry",
+      "minimax",
+      "mistral",
+      "modelstudio",
+      "moonshot",
+      "nvidia",
+      "ollama",
+      "openai",
+      "opencode",
+      "opencode-go",
+      "openrouter",
+      "phone-control",
+      "qianfan",
+      "qwen",
+      "runway",
+      "sglang",
+      "stepfun",
+      "synthetic",
+      "talk-voice",
+      "together",
+      "venice",
+      "vercel-ai-gateway",
+      "vllm",
+      "volcengine",
+      "vydra",
+      "xai",
+      "xiaomi",
+      "zai"
+    ],
+    "enabled": true,
+    "entries": {
+      "browser": {
+        "enabled": true
+      },
+      "memory-core": {
+        "config": {
+          "dreaming": {
+            "enabled": true
+          }
+        }
+      },
+      "minimax": {
+        "enabled": true
+      },
+      "openclaw-lark": {
+        "enabled": true
+      },
+      "wecom": {
+        "enabled": true
+      },
+      "openclaw-weixin": {
+        "enabled": true
+      }
+    }
+  },
+  "secrets": {
+    "resolution": {
+      "maxBatchBytes": 16
+    }
+  },
+  "session": {
+    "idleMinutes": 10080
+  },
+  "skills": {
+    "entries": {
+      "brave-web-search": {
+        "enabled": true
+      },
+      "discord": {
+        "enabled": true
+      },
+      "docx": {
+        "enabled": true
+      },
+      "feishu-bitable": {
+        "enabled": true
+      },
+      "feishu-calendar": {
+        "enabled": true
+      },
+      "feishu-channel-rules": {
+        "enabled": true
+      },
+      "feishu-create-doc": {
+        "enabled": true
+      },
+      "feishu-fetch-doc": {
+        "enabled": true
+      },
+      "feishu-im-read": {
+        "enabled": true
+      },
+      "feishu-task": {
+        "enabled": true
+      },
+      "feishu-troubleshoot": {
+        "enabled": true
+      },
+      "feishu-update-doc": {
+        "enabled": true
+      },
+      "find-skills": {
+        "enabled": true
+      },
+      "pdf": {
+        "enabled": true
+      },
+      "pptx": {
+        "enabled": true
+      },
+      "self-improving-agent": {
+        "enabled": true
+      },
+      "tavily-search": {
+        "apiKey": "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",
+        "enabled": true
+      },
+      "web-search": {
+        "enabled": true
+      },
+      "xlsx": {
+        "enabled": true
+      },
+      "1password": {
+        "enabled": true
+      },
+      "api-gateway": {
+        "enabled": true
+      },
+      "apple-notes": {
+        "enabled": true
+      },
+      "apple-reminders": {
+        "enabled": true
+      },
+      "bear-notes": {
+        "enabled": true
+      },
+      "blogwatcher": {
+        "enabled": true
+      },
+      "blucli": {
+        "enabled": true
+      },
+      "bluebubbles": {
+        "enabled": true
+      },
+      "camsnap": {
+        "enabled": true
+      },
+      "clawflow": {
+        "enabled": true
+      },
+      "clawflow-inbox-triage": {
+        "enabled": true
+      },
+      "clawhub": {
+        "enabled": true
+      },
+      "coding-agent": {
+        "enabled": true
+      },
+      "eightctl": {
+        "enabled": true
+      },
+      "gemini": {
+        "enabled": true
+      },
+      "gh-issues": {
+        "enabled": true
+      },
+      "gifgrep": {
+        "enabled": true
+      },
+      "github": {
+        "enabled": true
+      },
+      "gog": {
+        "enabled": true
+      },
+      "goplaces": {
+        "enabled": true
+      },
+      "healthcheck": {
+        "enabled": true
+      },
+      "himalaya": {
+        "enabled": true
+      },
+      "imsg": {
+        "enabled": true
+      },
+      "mcporter": {
+        "enabled": true
+      },
+      "model-usage": {
+        "enabled": true
+      },
+      "nano-pdf": {
+        "enabled": true
+      },
+      "node-connect": {
+        "enabled": true
+      },
+      "notion": {
+        "enabled": true
+      },
+      "obsidian": {
+        "enabled": true
+      },
+      "openai-whisper": {
+        "enabled": true
+      },
+      "openai-whisper-api": {
+        "enabled": true
+      },
+      "openhue": {
+        "enabled": true
+      },
+      "oracle": {
+        "enabled": true
+      },
+      "ordercli": {
+        "enabled": true
+      },
+      "peekaboo": {
+        "enabled": true
+      },
+      "qmd": {
+        "enabled": true
+      },
+      "sag": {
+        "enabled": true
+      },
+      "self-improvement": {
+        "enabled": true
+      },
+      "session-logs": {
+        "enabled": true
+      },
+      "sherpa-onnx-tts": {
+        "enabled": true
+      },
+      "skill-creator": {
+        "enabled": true
+      },
+      "slack": {
+        "enabled": true
+      },
+      "songsee": {
+        "enabled": true
+      },
+      "sonoscli": {
+        "enabled": true
+      },
+      "spotify-player": {
+        "enabled": true
+      },
+      "summarize": {
+        "enabled": true
+      },
+      "things-mac": {
+        "enabled": true
+      },
+      "tmux": {
+        "enabled": true
+      },
+      "trello": {
+        "enabled": true
+      },
+      "video-frames": {
+        "enabled": true
+      },
+      "voice-call": {
+        "enabled": true
+      },
+      "wacli": {
+        "enabled": true
+      },
+      "weather": {
+        "enabled": true
+      },
+      "wecom-contact-lookup": {
+        "enabled": true
+      },
+      "wecom-doc-manager": {
+        "enabled": true
+      },
+      "wecom-edit-todo": {
+        "enabled": true
+      },
+      "wecom-get-todo-detail": {
+        "enabled": true
+      },
+      "wecom-get-todo-list": {
+        "enabled": true
+      },
+      "wecom-meeting-create": {
+        "enabled": true
+      },
+      "wecom-meeting-manage": {
+        "enabled": true
+      },
+      "wecom-meeting-query": {
+        "enabled": true
+      },
+      "wecom-msg": {
+        "enabled": true
+      },
+      "wecom-preflight": {
+        "enabled": true
+      },
+      "wecom-schedule": {
+        "enabled": true
+      },
+      "wecom-send-media": {
+        "enabled": true
+      },
+      "wecom-send-template-card": {
+        "enabled": true
+      },
+      "wecom-smartsheet-data": {
+        "enabled": true
+      },
+      "wecom-smartsheet-schema": {
+        "enabled": true
+      },
+      "xurl": {
+        "enabled": false
+      },
+      "nano-banana-pro": {
+        "enabled": true
+      }
+    }
+  },
+  "tools": {
+    "exec": {
+      "ask": "off",
+      "security": "full"
+    },
+    "profile": "full",
+    "sessions": {
+      "visibility": "all"
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "openclaw-weixin",
+        "accountId": "97c8051b7d40-im-bot"
+      }
+    }
+  ]
+}
